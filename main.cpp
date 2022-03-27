@@ -10,9 +10,10 @@ using std::cout;
 int main(int argc, char **argv) {
 
   // Пример. Создание пустого динамического массива.
-  assignment::DynamicArray array;
+  //assignment::DynamicArray array;
 
-  cout << "Write your code here...\n";
+  int *arr = new int[3];
 
+  arr = new int[6];
   return 0;
 }

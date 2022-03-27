@@ -12,11 +12,20 @@ namespace assignment {
       throw std::invalid_argument("capacity is not positive");
     }
 
-    // Write your code here ...
+    size_ = 0;
+    capacity_ = capacity;
+    data_ = new int[capacity_];
+
+    for (int i = 0; i < capacity_; i++) {
+      data_[i] = 0;
+    }
   }
 
   DynamicArray::~DynamicArray() {
-    // Write your code here ...
+    size_ = 0;
+    capacity_ = 0;
+    delete[] data_;
+    data_ = nullptr;
   }
 
   void DynamicArray::Add(int value) {
