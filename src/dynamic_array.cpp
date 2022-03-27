@@ -66,15 +66,15 @@ namespace assignment {
   }
 
   bool DynamicArray::IsEmpty() const {
-    return false;
+    return size_ == 0;
   }
 
   int DynamicArray::size() const {
-    return 0;
+    return size_;
   }
 
   int DynamicArray::capacity() const {
-    return 0;
+    return capacity_;
   }
 
   bool DynamicArray::Resize(int new_capacity) {
