@@ -49,7 +49,7 @@ namespace assignment {
   }
 
   bool DynamicArray::Insert(int index, int value) {
-    if (index >= size_ || index < 0) {
+    if (index > size_ || index < 0) {
       return false;
     }
     else {
@@ -58,6 +58,7 @@ namespace assignment {
           data_[i] = data_[i-1];
         }
         data_[index] = value;
+        size_++;
       }
       else {
         int *temp = new int[capacity_];
@@ -94,14 +95,9 @@ namespace assignment {
     }
     else {
       int deleted = data_[index];
-      int *temp = new int[size_ - index - 1];
-      for (int i = index+1; i < size_; i++) {
-        temp[i] = data_[i];
-      }
+      for (int i = index; i < size_; i++)
+        data_[i] = data_[i + 1];
       size_--;
-      for (int i = index; i < size_; i ++) {
-        data_[i] = temp[i+1];
-      }
       return deleted;
     }
   }
