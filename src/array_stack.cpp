@@ -20,10 +20,7 @@ namespace assignment {
   }
 
   ArrayStack::~ArrayStack() {
-    size_ = 0;
-    capacity_ = 0;
     delete[] data_;
-    data_ = nullptr;
   }
 
   void ArrayStack::Push(int value) {
